@@ -218,9 +218,7 @@ body{
 
 
 .information-active .toggle{
-    /* width: 100%; */
-    /* transition: all 1s linear; */
-    animation: test 10s ease-out;
+    width: 100%;
 }
 
 .information-active .analytics{
@@ -230,12 +228,4 @@ body{
 
 .information-active .container-control{
     opacity: 0;
-}
-
-@keyframes test{
-    from{
-        width: 50%;
-    }to{
-        width: 100%;
-    }
 }
