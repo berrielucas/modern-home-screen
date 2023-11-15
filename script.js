@@ -42,3 +42,13 @@ function clikCard() {
 //   cardCriado.innerHTML = "<h2>Cartão Teste Dois</h2><span></span><p>XXXX XXXX XXXX XXXX</p><p>Lucas M Berriel</p>";
 //   container.appendChild(cardCriado);
 // });
+
+const info = document.querySelector('.information-container');
+
+info.addEventListener('click',()=>{
+    if(info.classList.contains('information-active')){
+      info.classList.remove('information-active');
+    }else{
+      info.classList.add('information-active');
+    }
+});

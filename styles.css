@@ -9,7 +9,6 @@
     --bg-color: rgb(42, 41, 41);
     --color: white;
     --bg-info-color: rgb(79,79,79,0.7);
-    --opacity-card: 1;
 
     --blue-card: linear-gradient(135deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 50%, rgba(0,48,255,1) 100%);
     --red-card: linear-gradient(135deg, rgba(137,22,22,1) 0%, rgba(175,14,14,1) 50%, rgba(255,0,0,1) 100%);
@@ -28,8 +27,8 @@ body{
     flex-direction: column;
     padding: 15px;
     gap: 1rem;
-    transform: translateY(55%);
-    position: relative;
+    /* transform: translateY(55%); */
+    /* position: relative; */
 }
 
 
@@ -41,7 +40,9 @@ body{
     flex-direction: column;
     position: relative;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
+    padding: 0 20px;
+    height: 41vh;
 }
 
 .card-item{
@@ -50,7 +51,6 @@ body{
     padding: 30px;
     gap: 0.5rem;
     border-radius: 20px;
-    opacity: var(--opacity-card);
     position: absolute;
     z-index: 0;
     transform: translateY(-5%) scale(0.5);
@@ -75,7 +75,7 @@ body{
 .second-card{
     display: flex;
     width: 95%;
-    position: absolute;
+    /* position: absolute; */
     transform: translateY(8%);
     z-index: 998;
     transition: all 0.5s ease-in-out;
@@ -113,16 +113,16 @@ body{
 .information-container{
     display: flex;
     flex-direction: column;
-    transform: translateY(73%);
+    /* transform: translateY(73%); */
     gap: 0.5rem;
     overflow: hidden;
+    transition: all 1s linear;
 }
 
 .information-active{
-    transform: translateY(0%);
+    transform: translateY(-50%);
     z-index: 999999;
     --bg-info-color: rgb(0,0,0,0.6);
-    --opacity-card: 0.5;
 }
 
 .analytics{
@@ -141,6 +141,7 @@ body{
     backdrop-filter: blur(3px);
     -webkit-backdrop-filter: blur(3px);
     width: 100%;
+    height: 8vh;
     border-radius: 20px;
     padding: 15px 20px;
 }
@@ -158,6 +159,7 @@ body{
     width: 50%;
     border-radius: 20px;
     padding: 15px;
+    transition: all 1s linear;
 }
 
 .limit{
@@ -189,8 +191,7 @@ body{
 
 .group-bars span{
     display: block;
-    max-width: 100%;
-    width: 100%;
+    /* max-width: 100%; */
     height: 4px;
     border-radius: 2px;
     background-color: rgb(169,169,169);
@@ -202,10 +203,39 @@ body{
 }
 
 
-.information-active .graphic{
-    transform: translateX(-200%);
+/* .information-active .graphic{
+    transform: translateX(100%);
+    display: none;
+} */
+
+/* .information-active .group-bars span{
+    
+} */
+.information-active .group-bars{
+    flex-direction: row;
+    gap: 0;
 }
 
-.information-active .limit{
-    width: 100%;
+
+.information-active .toggle{
+    /* width: 100%; */
+    /* transition: all 1s linear; */
+    animation: test 10s ease-out;
+}
+
+.information-active .analytics{
+    width: 200%;
+    gap: 0;
+}
+
+.information-active .container-control{
+    opacity: 0;
+}
+
+@keyframes test{
+    from{
+        width: 50%;
+    }to{
+        width: 100%;
+    }
 }
