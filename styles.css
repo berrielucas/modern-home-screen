@@ -1,0 +1,211 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+:root{
+    --bg-color: rgb(42, 41, 41);
+    --color: white;
+    --bg-info-color: rgb(79,79,79,0.7);
+    --opacity-card: 1;
+
+    --blue-card: linear-gradient(135deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 50%, rgba(0,48,255,1) 100%);
+    --red-card: linear-gradient(135deg, rgba(137,22,22,1) 0%, rgba(175,14,14,1) 50%, rgba(255,0,0,1) 100%);
+    --green-card: linear-gradient(135deg, rgba(12,78,4,1) 0%, rgba(17,121,9,1) 50%, rgba(91,214,32,1) 100%);
+    --orange-card: linear-gradient(135deg, rgba(141, 59, 0,1) 0%, rgba(194, 81, 0,1) 50%, rgba(243, 101, 0, 1) 100%);
+    --purple-card: linear-gradient(135deg, rgba(62,4,78,1) 0%, rgba(105,9,121,1) 50%, rgba(166,32,214,1) 100%);
+}
+
+body{
+    background-color: var(--bg-color);
+    color: var(--color);
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    gap: 1rem;
+    transform: translateY(55%);
+    position: relative;
+}
+
+
+
+/* Parte 1 */
+
+.cards-container{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-item{
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    gap: 0.5rem;
+    border-radius: 20px;
+    opacity: var(--opacity-card);
+    position: absolute;
+    z-index: 0;
+    transform: translateY(-5%) scale(0.5);
+    transition: all 0.5s ease-in-out;
+}
+
+/* .card-item:active{
+    animation: animate 3s  infinite;
+} */
+
+
+
+.first-card{
+    display: flex;
+    width: 100%;
+    transform: translateY(16%);
+    box-shadow: 0 15px 25px rgb(51, 51, 51);
+    z-index: 999;
+    transition: all 0.5s ease-in-out;
+}
+
+.second-card{
+    display: flex;
+    width: 95%;
+    position: absolute;
+    transform: translateY(8%);
+    z-index: 998;
+    transition: all 0.5s ease-in-out;
+}
+
+.third-card{
+    display: flex;
+    width: 90%;
+    position: absolute;
+    /* scale: 0.9; */
+    z-index: 997;
+    transition: all 0.5s ease-in-out;
+    transform: translateY(0);
+}
+
+.card-item span{
+    display: block;
+    background-color: rgb(240,230,140);
+    border-radius: 15px;
+    width: 55px;
+    height: 40px;
+    margin: 20px 0;
+}
+
+.card-item p{
+    font-size: 15px;
+}
+
+
+
+
+
+/* Parte 2 */
+
+.information-container{
+    display: flex;
+    flex-direction: column;
+    transform: translateY(73%);
+    gap: 0.5rem;
+    overflow: hidden;
+}
+
+.information-active{
+    transform: translateY(0%);
+    z-index: 999999;
+    --bg-info-color: rgb(0,0,0,0.6);
+    --opacity-card: 0.5;
+}
+
+.analytics{
+    display: flex;
+    gap: 0.5rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.container-control{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* background-color: rgb(79,79,79,0.7); */
+    background: radial-gradient(circle, var(--bg-info-color) 10%, rgb(51, 51, 51));
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    width: 100%;
+    border-radius: 20px;
+    padding: 15px 20px;
+}
+
+.container-control .control-item{
+    list-style: none;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.toggle{
+    background-color: var(--bg-info-color);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    width: 50%;
+    border-radius: 20px;
+    padding: 15px;
+}
+
+.limit{
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    overflow: hidden;
+}
+
+.limit-spent{
+    display: flex;
+    flex-direction: column;
+}
+
+.limit-spent p{
+    font-size: 20px;
+}
+
+.limit-spent span{
+    display: block;
+    font-size: 15px;
+}
+
+.group-bars{
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.group-bars span{
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background-color: rgb(169,169,169);
+}
+
+.group-bars .bar{
+    width: 60%;
+    background-color:rgb(127,255,0);
+}
+
+
+.information-active .graphic{
+    transform: translateX(-200%);
+}
+
+.information-active .limit{
+    width: 100%;
+}

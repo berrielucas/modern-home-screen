@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <title>Modern home screen</title>
+</head>
+<body>
+    <div class="container">
+        <div class="cards-container" onclick="clikCard()">
+            <div class="card-item" style="background: var(--purple-card);">
+                <h2>Nubank</h2>
+                <span></span>
+                <p>XXXX XXXX XXXX XXXX</p>
+                <p>Lucas M Berriel</p>
+            </div>
+            <div class="card-item" style="background: var(--green-card);">
+                <h2>PicPay</h2>
+                <span></span>
+                <p>XXXX XXXX XXXX XXXX</p>
+                <p>Lucas M Berriel</p>
+            </div>
+            <div class="card-item" style="background: var(--orange-card);">
+                <h2>Inter</h2>
+                <span></span>
+                <p>XXXX XXXX XXXX XXXX</p>
+                <p>Lucas M Berriel</p>
+            </div>
+            <div class="card-item" style="background: var(--red-card);">
+                <h2>Bradesco</h2>
+                <span></span>
+                <p>XXXX XXXX XXXX XXXX</p>
+                <p>Lucas M Berriel</p>
+            </div>
+            <div class="card-item" style="background: var(--blue-card);">
+                <h2>Cartão Teste</h2>
+                <span></span>
+                <p>XXXX XXXX XXXX XXXX</p>
+                <p>Lucas M Berriel</p>
+            </div>
+        </div>
+        
+        <div class="information-container information-active">
+            <div class="control-card">
+                <div class="container-control">
+                    <li class="control-item"><i class="fa-regular fa-snowflake"></i>Freeze</li>
+                    <li class="control-item"><i class="fa-solid fa-lock"></i>Reset PIN</li>
+                    <li class="control-item"><i class="fa-solid fa-sliders"></i>Settings</li>
+                </div>
+            </div>
+            <div class="analytics">
+                <div class="limit toggle">
+                    <div class="limit-spent">
+                        <p>R$ 6.000,00</p>
+                        <span>spent</span>
+                    </div>
+                    <div class="group-bars">
+                        <span class="bar"></span>
+                        <span></span>
+                    </div>
+                    <span><b>$10</b> monthly limit</span>
+
+                </div>
+                <div class="graphic toggle">
+
+                </div>
+            </div>
+            <div class="transactions">
+
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
