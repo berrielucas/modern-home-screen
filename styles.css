@@ -42,7 +42,7 @@ body{
     align-items: center;
     /* justify-content: center; */
     padding: 0 20px;
-    height: 36vh;
+    height: 255px;
 }
 
 .card-item{
@@ -116,7 +116,7 @@ body{
     /* transform: translateY(73%); */
     gap: 0.5rem;
     overflow: hidden;
-    transition: all 1s linear;
+    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 .information-active{
@@ -130,6 +130,7 @@ body{
     gap: 0.5rem;
     overflow: hidden;
     position: relative;
+    animation: surgir 1s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
 }
 
 .container-control{
@@ -141,7 +142,7 @@ body{
     backdrop-filter: blur(3px);
     -webkit-backdrop-filter: blur(3px);
     width: 100%;
-    height: 8vh;
+    height: 55px;
     border-radius: 20px;
     padding: 15px 20px;
 }
@@ -150,16 +151,16 @@ body{
     list-style: none;
     display: flex;
     gap: 0.5rem;
+    transition: all 1s ease-in-out;
 }
 
 .toggle{
     background-color: var(--bg-info-color);
     backdrop-filter: blur(3px);
     -webkit-backdrop-filter: blur(3px);
-    width: 50%;
+    width: 100%;
     border-radius: 20px;
     padding: 15px;
-    transition: all 1s linear;
 }
 
 .limit{
@@ -167,6 +168,7 @@ body{
     flex-direction: column;
     gap: 0.8rem;
     overflow: hidden;
+    transition: all 1s cubic-bezier(0.215, 0.610, 0.355, 1);
 }
 
 .limit-spent{
@@ -217,15 +219,34 @@ body{
 }
 
 
-.information-active .toggle{
+/* .information-active .toggle{
     width: 100%;
-}
+} */
 
 .information-active .analytics{
-    width: 200%;
-    gap: 0;
+    /* width: 200%; */
+    animation: esconder 1s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
 }
 
 .information-active .container-control{
-    opacity: 0;
+    display: none;
+}
+
+@keyframes esconder{
+    from{
+        width: 100%;
+        gap: 0.5rem;
+    }to{
+        width: 200%;
+        gap: 0;
+    }
+}
+@keyframes surgir{
+    from{
+        width: 200%;
+        gap: 0;
+    }to{
+        width: 100%;
+        gap: 0.5rem;
+    }
 }
