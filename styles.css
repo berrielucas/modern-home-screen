@@ -131,7 +131,7 @@ body{
 
 .active-transactions{
     display: none;
-    padding: 5px;
+    padding: 7.5px;
     align-items: center;
     justify-content: center;
     /* background:radial-gradient(circle,rgb(0,0,0,0.2) 5%, transparent); */
