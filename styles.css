@@ -25,10 +25,8 @@ body{
 .container{
     display: flex;
     flex-direction: column;
-    padding: 15px;
+    padding: 0.5rem;
     gap: 1rem;
-    /* transform: translateY(55%); */
-    /* position: relative; */
 }
 
 
@@ -40,8 +38,6 @@ body{
     flex-direction: column;
     position: relative;
     align-items: center;
-    /* justify-content: center; */
-    padding: 0 20px;
     height: 255px;
 }
 
@@ -55,13 +51,22 @@ body{
     z-index: 0;
     transform: translateY(-5%) scale(0.5);
     transition: all 0.5s ease-in-out;
+    animation: esconder-card 0.2s cubic-bezier(0.39, 0.575, 0.565, 1);
 }
 
-/* .card-item:active{
-    animation: animate 3s  infinite;
-} */
-
-
+@keyframes esconder-card{
+    from{
+        transform: translateY(16%);
+        width: 100%;
+        opacity: 1;
+        z-index: 999;
+    }to{
+        transform: translateY(30%);
+        width: 100%;
+        opacity: 0;
+        z-index: 999;
+    }
+}
 
 .first-card{
     display: flex;
@@ -72,10 +77,20 @@ body{
     transition: all 0.5s ease-in-out;
 }
 
+.information-active .first-card{
+    transform: translateY(10%) scale(0.91);
+}
+.information-active .second-card{
+    transform: translateY(2%) scale(0.91);
+}
+.information-active .third-card{
+    transform: translateY(-6%) scale(0.91);
+}
+
+
 .second-card{
     display: flex;
     width: 95%;
-    /* position: absolute; */
     transform: translateY(8%);
     z-index: 998;
     transition: all 0.5s ease-in-out;
@@ -85,7 +100,6 @@ body{
     display: flex;
     width: 90%;
     position: absolute;
-    /* scale: 0.9; */
     z-index: 997;
     transition: all 0.5s ease-in-out;
     transform: translateY(0);
@@ -113,14 +127,13 @@ body{
 .information-container{
     display: flex;
     flex-direction: column;
-    /* transform: translateY(73%); */
     gap: 0.3rem;
     overflow: hidden;
     transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
-.information-active{
-    transform: translateY(-50%);
+.information-active .information-container{
+    transform: translateY(-60%);
     z-index: 999999;
     --bg-info-color: rgb(0,0,0,0.6);
     background-color: rgb(42, 41, 41, 0.5);
@@ -134,9 +147,6 @@ body{
     padding: 7.5px;
     align-items: center;
     justify-content: center;
-    /* background:radial-gradient(circle,rgb(0,0,0,0.2) 5%, transparent); */
-    /* backdrop-filter: blur(3px);
-    -webkit-backdrop-filter: blur(3px); */
 }
 
 .active-transactions span{
@@ -151,7 +161,6 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /* background-color: rgb(79,79,79,0.7); */
     background: radial-gradient(circle, var(--bg-info-color) 10%, rgb(51, 51, 51));
     backdrop-filter: blur(3px);
     -webkit-backdrop-filter: blur(3px);
@@ -176,8 +185,17 @@ body{
     animation: surgir 1s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
 }
 
+@keyframes surgir{
+    from{
+        width: 200%;
+        gap: 0;
+    }to{
+        width: 100%;
+        gap: 0.3rem;
+    }
+}
+
 .toggle{
-    background-color: var(--bg-info-color);
     backdrop-filter: blur(3px);
     -webkit-backdrop-filter: blur(3px);
     width: 100%;
@@ -188,6 +206,7 @@ body{
 .limit{
     display: flex;
     flex-direction: column;
+    background-color: var(--bg-info-color);
     gap: 0.8rem;
     overflow: hidden;
     transition: all 1s cubic-bezier(0.215, 0.610, 0.355, 1);
@@ -228,17 +247,35 @@ body{
     background-color:rgb(127,255,0);
 }
 
+.graphic{
+    background-color: rgb(79,79,79,0.7);
+    animation: surgir-grafico 1s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+}
+
+@keyframes surgir-grafico{
+    from{
+        opacity: 0;
+    }to{
+        opacity: 1;
+    }
+}
+
 .information-active .active-transactions{
     display: flex;
 }
 
-.information-active .group-bars{
-    /* flex-direction: row; */
-    gap: 0;
-}
-
 .information-active .analytics{
     animation: esconder 1s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+}
+
+@keyframes esconder{
+    from{
+        width: 100%;
+        gap: 0.3rem;
+    }to{
+        width: 200%;
+        gap: 0;
+    }
 }
 
 .information-active .container-control{
@@ -253,21 +290,14 @@ body{
     z-index: 9999;
 }
 
-@keyframes esconder{
-    from{
-        width: 100%;
-        gap: 0.3rem;
-    }to{
-        width: 200%;
-        gap: 0;
-    }
+.information-active .graphic{
+    animation: esconde-grafico 1s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
 }
-@keyframes surgir{
+
+@keyframes esconde-grafico{
     from{
-        width: 200%;
-        gap: 0;
+        opacity: 1;
     }to{
-        width: 100%;
-        gap: 0.5rem;
+        opacity: 0;
     }
 }

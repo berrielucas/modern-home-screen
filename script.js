@@ -1,5 +1,6 @@
 let list = document.querySelectorAll(".card-item");
-const container = document.querySelector('.cards-container')
+const container_card = document.querySelector('.cards-container')
+container_card.classList.add('active');
 for (i = 0; i < list.length; i++) {
   if (i == 0) {
     list[i].classList.add("first-card");
@@ -11,11 +12,12 @@ for (i = 0; i < list.length; i++) {
 }
 
 function clikCard() {
+  if (container_card.classList.contains('active')){
     list[0].classList.remove('first-card');
     const removido = list[0];
-    container.removeChild(removido);
+    container_card.removeChild(removido);
     list = document.querySelectorAll('.card-item');
-
+  
     for (i = 0; i < list.length; i++) {
         if (i == 0) {
             list[i].classList.remove("second-card");
@@ -27,8 +29,8 @@ function clikCard() {
             list[i].classList.add("third-card");
         }
     }
-
-    container.appendChild(removido);
+    container_card.appendChild(removido);
+  }
 }
 
 // Adicionar cartão
@@ -43,12 +45,15 @@ function clikCard() {
 //   container.appendChild(cardCriado);
 // });
 
-const info = document.querySelector('.information-container');
+const transacao_ativo = document.querySelector('.information-container');
+const info = document.querySelector('body');
 
-info.addEventListener('click',()=>{
+transacao_ativo.addEventListener('click',()=>{
     if(info.classList.contains('information-active')){
       info.classList.remove('information-active');
+      container_card.classList.add('active');
     }else{
       info.classList.add('information-active');
+      container_card.classList.remove('active');
     }
 });
