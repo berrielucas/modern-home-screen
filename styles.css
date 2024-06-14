@@ -29,10 +29,6 @@ body{
     gap: 1rem;
 }
 
-
-
-/* Parte 1 */
-
 .cards-container{
     display: flex;
     flex-direction: column;
@@ -87,7 +83,6 @@ body{
     transform: translateY(-6%) scale(0.91);
 }
 
-
 .second-card{
     display: flex;
     width: 95%;
@@ -117,12 +112,6 @@ body{
 .card-item p{
     font-size: 15px;
 }
-
-
-
-
-
-/* Parte 2 */
 
 .information-container{
     display: flex;
