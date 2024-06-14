@@ -33,18 +33,6 @@ function clikCard() {
   }
 }
 
-// Adicionar cartão
-
-// const buton = document.getElementById('add');
-
-// buton.addEventListener('click',function (){
-//   const cardCriado = document.createElement('div');
-//   cardCriado.classList.add('card-item');
-//   cardCriado.style.background = 'var(--blue-card)';
-//   cardCriado.innerHTML = "<h2>Cartão Teste Dois</h2><span></span><p>XXXX XXXX XXXX XXXX</p><p>Lucas M Berriel</p>";
-//   container.appendChild(cardCriado);
-// });
-
 const transacao_ativo = document.querySelector('.information-container');
 const info = document.querySelector('body');
 
