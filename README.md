@@ -1,1 +1,1 @@
-<img src="modern-home-screen.gif" width="40%">
+<img src="modern-home-screen.gif" width="30%">
